@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - csc164db_carlos@phpmyadmin.cdgwdgkn5fuv.us-west-2.rds.amazonaws.com" uuid="404a2859-e46a-490a-8b23-4cee4ae16ec4">
+    <database-info product="MySQL" version="5.6.27-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="csc164db_carlos"/>
+      <table id="2" parent="1" name="Courses"/>
+      <table id="3" parent="1" name="Enrollment"/>
+      <table id="4" parent="1" name="Student"/>
+      <column id="5" parent="2" name="CRN">
+        <mandatory>1</mandatory>
+        <data-type>int(5)</data-type>
+      </column>
+      <column id="6" parent="2" name="Title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(28)</data-type>
+      </column>
+      <column id="7" parent="2" name="Major">
+        <mandatory>1</mandatory>
+        <data-type>varchar(3)</data-type>
+      </column>
+      <column id="8" parent="2" name="Number">
+        <mandatory>1</mandatory>
+        <data-type>int(3)</data-type>
+      </column>
+      <column id="9" parent="2" name="Department">
+        <mandatory>1</mandatory>
+        <data-type>varchar(3)</data-type>
+      </column>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>CRN</columns>
+        <primary>1</primary>
+      </key>
+      <column id="11" parent="3" name="_ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="12" parent="3" name="Student_ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="13" parent="3" name="Student_ID">
+        <columns>Student_ID</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="14" parent="3" name="PRIMARY">
+        <columns>_ID</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="15" parent="3" name="Enrollment_ibfk_1">
+        <columns>Student_ID</columns>
+        <ref-key>~.Student.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="16" parent="4" name="StudentID">
+        <mandatory>1</mandatory>
+        <data-type>int(9)</data-type>
+      </column>
+      <column id="17" parent="4" name="FirstName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="18" parent="4" name="LastName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="19" parent="4" name="Major">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="20" parent="4" name="Department">
+        <mandatory>1</mandatory>
+        <data-type>varchar(3)</data-type>
+      </column>
+      <key id="21" parent="4" name="PRIMARY">
+        <columns>StudentID</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
